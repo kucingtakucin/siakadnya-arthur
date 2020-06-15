@@ -16,6 +16,13 @@
             <button class="btn btn-success mb-3 text-white" data-toggle="modal" data-target="#exampleModal">Insert</button>
         </header>
         <main>
+            <form action="" method="post" class="form-inline">
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="search" class="sr-only">Search</label>
+                    <input type="text" class="form-control" name="keyword" id="search" placeholder="Search" autofocus autocomplete="off">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2" name="search">Search</button>
+            </form>
             <table class="table table-striped">
                 <thead class="thead-dark">
                 <tr>
@@ -31,6 +38,9 @@
                 <?php
                 $i = 1;
                 $students = select('SELECT * FROM mahasiswa');
+                if (isset($_POST['search'])):
+                    $students = search($_POST['keyword']);
+                endif;
                 ?>
                 <?php foreach ($students as $student): ?>
                     <tr>
@@ -60,7 +70,7 @@
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label for="nim">NIM</label>
-                                    <input type="text" class="form-control" required autofocus id="nim" name="nim">
+                                    <input type="text" class="form-control" required id="nim" autofocus name="nim">
                                 </div>
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
@@ -228,7 +238,7 @@
                                 </a>
                             </div>
                             <div class="modal-body text-center">
-                                <?php if(update($_POST, $student_id) >= 0): ?>
+                                <?php if(update($student_id, $_POST) >= 0): ?>
                                     <h5 class="text-success">Data berhasil diupdate!</h5>
                                 <?php else: ?>
                                     <h5>Gagal mengupdate data!</h5>
@@ -253,6 +263,7 @@
         $(document).ready(function () {
             $('#exampleModal2').modal('show')
             $('#exampleModal4').modal('show')
+            $('#exampleModal5').modal('show')
             $('#exampleModal6').modal('show')
         })
     </script>
