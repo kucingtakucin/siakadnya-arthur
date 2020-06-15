@@ -39,7 +39,7 @@ $students = query('SELECT * FROM mahasiswa');
                         <td><?= $student['nim'] ?></td>
                         <td><?= $student['jurusan'] ?></td>
                         <td><?= $student['angkatan'] ?></td>
-                        <td><a href="" class="btn btn-warning text-white">Update</a> | <a href="index.php?id=<?= $student['id'] ?>" class="btn btn-danger">Delete</a></td>
+                        <td><a href="index.php?id=<?= $student['id'] ?>" class="btn btn-warning text-white mr-2">Update</a><a href="index.php?id=<?= $student['id'] ?>" class="btn btn-danger">Delete</a></td>
                     </tr>
                     <?php $i++ ?>
                 <?php endforeach ?>
@@ -144,7 +144,7 @@ $students = query('SELECT * FROM mahasiswa');
             <p class="text-center">Copyright &copy; 2020. Adam Arthur Faizal</p>
         </footer>
     </div>
-    <script src="jquery-3.4.1.min.js"></script>
+    <script src="../jquery-3.4.1.min.js"></script>
     <script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function () {
