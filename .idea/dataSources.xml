@@ -9,6 +9,7 @@
       <driver-properties>
         <property name="serverTimezone" value="Asia/Jakarta" />
       </driver-properties>
+      <keep-alive timeout="0" />
       <time-zone>Asia/Jakarta</time-zone>
     </data-source>
   </component>
