@@ -1,4 +1,4 @@
-<?php require_once 'model.php' ?>
+<?php require_once 'init.php' ?>
 <!doctype html>
 <html lang="id">
 <head>
@@ -67,21 +67,29 @@
                             </button>
                         </div>
                         <div class="modal-body text-center">
-                            <?php try { ?>
-                                <?php if (register($_POST) > 0): ?>
-                                    <h5 class="text-success">Berhasil melakukan register! Silakan login terlebih dahulu!</h5>
-                                <?php else: ?>
-                                    <h5>Gagal melakukan register!</h5>
-                                    <h5 class="text-danger">Error! <?= mysqli_error($link) ?></h5>
-                                <?php endif ?>
-                            <?php } catch (\RuntimeException $exception) { ?>
-                                <h5>Gagal melakukan register!</h5>
-                                <h5 class="text-danger">Exception! <?= $exception->getMessage() ?></h5>
-                            <?php } ?>
+                        <?php try { ?>
+                            <?php if (register($_POST) > 0): ?>
+                            <h5 class="text-success">Berhasil melakukan register! Silakan login terlebih dahulu!</h5>
                         </div>
                         <div class="modal-footer">
                             <a href="register.php" class="btn btn-secondary">Close</a>
                         </div>
+                            <?php else: ?>
+                            <h5>Gagal melakukan register!</h5>
+                            <h5 class="text-danger">Error! <?= mysqli_error($link) ?></h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                            <?php endif ?>
+                        <?php } catch (\RuntimeException $exception) { ?>
+                            <h5>Gagal melakukan register!</h5>
+                            <h5 class="text-danger">Exception! <?= $exception->getMessage() ?></h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
