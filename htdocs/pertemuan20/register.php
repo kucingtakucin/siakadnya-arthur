@@ -11,12 +11,31 @@ endif ?>
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register Page</title>
-    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
     <style>
         .container {
             margin-top: 150px;
             margin-bottom: 150px;
         }
+
+        @media (min-width: 425px) and (max-width: 576px) {
+            footer p {
+                font-size: 15px;
+            }
+        }
+
+        @media (min-width: 320px) and (max-width: 425px) {
+            footer p {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            footer p {
+                font-size: 12px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -40,7 +59,7 @@ endif ?>
         <h1 class="font-weight-bold mt-2">Register</h1>
     </header>
     <main class="d-flex flex-column align-items-center justify-content-center">
-        <div class="card rounded-lg shadow-lg" style="width: 500px;">
+        <div class="card rounded-lg shadow-lg" style="max-width: 500px;">
             <div class="card-body">
                 <form action="" method="post">
                     <div class="form-row">
@@ -97,11 +116,11 @@ endif ?>
                             <h5 class="text-success">Berhasil melakukan register! Silakan login terlebih dahulu!</h5>
                         </div>
                         <div class="modal-footer">
-                            <a href="register.php" class="btn btn-secondary">Close</a>
+                            <a href="login.php" class="btn btn-secondary">Close</a>
                         </div>
                             <?php else: ?>
                             <h5>Gagal melakukan register!</h5>
-                            <h5 class="text-danger">Error! <?= mysqli_error($link) ?></h5>
+                            <h5 class="text-danger"><?= mysqli_error($link) ?></h5>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -109,7 +128,7 @@ endif ?>
                             <?php endif ?>
                         <?php } catch (\RuntimeException $exception) { ?>
                             <h5>Gagal melakukan register!</h5>
-                            <h5 class="text-danger">Exception! <?= $exception->getMessage() ?></h5>
+                            <h5 class="text-danger"><?= $exception->getMessage() ?></h5>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -124,9 +143,9 @@ endif ?>
         <p class="text-center mt-2">Copyright &copy; 2020. Adam Arthur Faizal</p>
     </footer>
 </div>
-<script src="../jquery-3.5.1.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-<script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function () {
         $('#registerModal').modal('show')

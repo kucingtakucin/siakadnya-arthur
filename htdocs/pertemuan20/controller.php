@@ -145,6 +145,7 @@ function login(): bool{
         if (password_verify($password, $result['password'])):
             $_SESSION['login'] = true;
             $_SESSION['username'] = $result['username'];
+            $_SESSION['role'] = $result['role'];
             if (isset($_POST['rememberme'])):
                 setcookie('key', base64_encode($result['id']), time() + (60 ** 2));
                 setcookie('value', hash('sha512', $result['username']), time() + (60 ** 2));

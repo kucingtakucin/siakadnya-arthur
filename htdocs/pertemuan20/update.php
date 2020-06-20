@@ -71,7 +71,7 @@ $student_detail = select("SELECT * FROM mahasiswa WHERE id = '$student_id'")[0];
                         <?php endif ?>
                     <?php } catch (\RuntimeException $exception) { ?>
                         <h5>Gagal mengupdate data,!</h5>
-                        <h5 class="text-danger">Exception! <?= $exception->getMessage() ?></h5>
+                        <h5 class="text-danger"><?= $exception->getMessage() ?></h5>
                     <?php }?>
                 </div>
                 <div class="modal-footer">

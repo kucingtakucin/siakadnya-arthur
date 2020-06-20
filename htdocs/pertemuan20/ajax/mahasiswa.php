@@ -1,6 +1,6 @@
 <?php
 //sleep(1);
-usleep(500000);
+//usleep(500000);
 require_once '../init.php';
 $jumlahDataPerHalaman = 5;
 $jumlahSeluruhData = count(select("SELECT * FROM mahasiswa"));

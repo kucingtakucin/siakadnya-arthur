@@ -59,11 +59,11 @@
                         <h5 class="text-success">Data berhasil ditambahkan!</h5>
                     <?php else: ?>
                         <h5>Gagal menambahkan data!</h5>
-                        <h5 class="text-danger">Error! <?= mysqli_error($link) ?></h5>
+                        <h5 class="text-danger"><?= mysqli_error($link) ?></h5>
                     <?php endif ?>
                 <?php } catch (\RuntimeException $exception) { ?>
                     <h5>Gagal menambahkan data!</h5>
-                    <h5 class="text-danger">Exception! <?= $exception->getMessage() ?></h5>
+                    <h5 class="text-danger"><?= $exception->getMessage() ?></h5>
                 <?php } ?>
                 </div>
                 <div class="modal-footer">

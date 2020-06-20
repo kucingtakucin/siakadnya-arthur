@@ -11,11 +11,112 @@ endif ?>
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Daftar Mahasiswa</title>
-    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
     <style>
         .container {
             margin-top: 150px;
             margin-bottom: 150px;
+        }
+
+        @media (min-width: 768px) and (max-width: 992px) {
+            header h1 {
+                font-size: 35px;
+            }
+
+            header h4 {
+                font-size: 20px;
+            }
+
+            header button {
+                font-size: 16px !important;
+                padding: 3px 6px !important;
+            }
+
+            thead th {
+                font-size: 16px;
+            }
+
+            tbody td p, tbody th p{
+                font-size: 16px;
+            }
+
+            tbody td a.btn {
+                padding: 3px 6px !important;
+                margin: 30px 10px 0 0 !important;
+                font-size: 16px;
+            }
+
+            tbody td img {
+                margin: 60px 0 20px;
+            }
+        }
+
+        @media (min-width: 576px) and (max-width: 768px) {
+            header h1 {
+                font-size: 35px;
+            }
+
+            header h4 {
+                font-size: 20px;
+            }
+
+            header button {
+                font-size: 16px !important;
+                padding: 3px 6px !important;
+            }
+
+            thead th {
+                font-size: 10px;
+            }
+
+            tbody td p.mt-5, tbody th p.mt-5{
+                font-size: 10px;
+                margin: 30px 0 20px !important;
+            }
+
+            tbody td a.btn {
+                padding: 3px 6px !important;
+                margin: 15px 10px 0 0 !important;
+                font-size: 10px;
+            }
+
+            tbody td img {
+                margin: 30px 0 20px;
+            }
+        }
+
+        @media (min-width: 425px) and (max-width: 576px) {
+            header h1 {
+                font-size: 35px;
+            }
+
+            header h4 {
+                font-size: 20px;
+            }
+
+            header button {
+                font-size: 16px !important;
+                padding: 3px 6px !important;
+            }
+
+            thead th {
+                font-size: 10px;
+            }
+
+            tbody td p.mt-5, tbody th p.mt-5{
+                font-size: 10px;
+                margin: 30px 0 20px !important;
+            }
+
+            tbody td a.btn {
+                padding: 3px 6px !important;
+                margin: 15px 10px 0 0 !important;
+                font-size: 10px;
+            }
+
+            tbody td img {
+                margin: 30px 0 20px;
+            }
         }
     </style>
 </head>
@@ -37,7 +138,7 @@ endif ?>
                 </div>
             </nav>
             <h1 class="font-weight-bold mt-3 mb-0">Daftar Mahasiswa</h1>
-            <h4 class="text-muted mt-0 mb-3">Selamat datang, <?= $_SESSION['username'] ?>!</h4>
+            <h4 class="text-muted mt-0 mb-3">Selamat datang, <?= $_SESSION['username'] ?>. Status: <?php if ($_SESSION['role'] === '0'): ?>User<?php else: ?>Admin<?php endif ?></h4>
             <button class="btn btn-success mb-3 text-white" data-toggle="modal" data-target="#insertModal1">Insert</button>
         </header>
         <main>
@@ -60,7 +161,7 @@ endif ?>
                 $awalDataTiapHalaman = ($jumlahDataPerHalaman * $halamanAktifSaatIni) - $jumlahDataPerHalaman;
                 $keyword = (isset($_GET['keyword'])) ? $_GET['keyword'] : 1;
                 $students = search($keyword, "$awalDataTiapHalaman, $jumlahDataPerHalaman") ?>
-                <table class="table table-striped">
+                <table class="table table-responsive table-striped">
                     <thead class="thead-dark">
                     <tr>
                         <th scope="col">No</th>
@@ -82,7 +183,7 @@ endif ?>
                             <td><p class="mt-5"><?= $student['nim'] ?></p></td>
                             <td><p class="mt-5"><?= $student['jurusan'] ?></p></td>
                             <td><p class="mt-5"><?= $student['angkatan'] ?></p></td>
-                            <td><a href="index.php?id=<?= $student['id'] ?>&status=update" class="btn btn-warning text-white mr-2 mt-5">Update</a><a href="index.php?id=<?= $student['id'] ?>&status=confirm-delete" class="btn btn-danger mt-5">Delete</a></td>
+                            <td><a href="index.php?id=<?= $student['id'] ?>&status=update" class="btn btn-warning text-white mr-2 mt-5 <?php if ($_SESSION['role'] === '0'): ?>disabled<?php endif ?>">Update</a><a href="index.php?id=<?= $student['id'] ?>&status=confirm-delete" class="btn btn-danger mt-5 <?php if ($_SESSION['role'] === '0'): ?>disabled<?php endif ?>">Delete</a></td>
                         </tr>
                         <?php $i++ ?>
                     <?php endforeach ?>
@@ -141,9 +242,9 @@ endif ?>
             <p class="text-center mt-2">Copyright &copy; 2020. Adam Arthur Faizal</p>
         </footer>
     </div>
-    <script src="../jquery-3.5.1.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-    <script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
