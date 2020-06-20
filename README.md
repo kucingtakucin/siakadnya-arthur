@@ -1,2 +1,2 @@
 # siakadnya-arthur.rf.gd
-Membuat web sistem akademik sederhana dengan PHP &amp; MySQL. Web ini dibuat dengan bantuan Bootstrap. 
+Membuat web sistem akademik sederhana dengan PHP native &amp; MySQL. Web ini dibuat dengan bantuan Bootstrap. 
