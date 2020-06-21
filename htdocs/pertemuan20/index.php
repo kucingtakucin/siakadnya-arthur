@@ -87,35 +87,119 @@ endif ?>
 
         @media (min-width: 425px) and (max-width: 576px) {
             header h1 {
-                font-size: 35px;
+                font-size: 30px;
             }
 
             header h4 {
-                font-size: 20px;
+                font-size: 16px;
             }
 
             header button {
-                font-size: 16px !important;
+                font-size: 13px !important;
                 padding: 3px 6px !important;
             }
 
             thead th {
-                font-size: 10px;
+                font-size: 8px;
             }
 
             tbody td p.mt-5, tbody th p.mt-5{
-                font-size: 10px;
-                margin: 30px 0 20px !important;
+                font-size: 8px;
+                margin: 24px 0 12px !important;
             }
 
             tbody td a.btn {
-                padding: 3px 6px !important;
-                margin: 15px 10px 0 0 !important;
-                font-size: 10px;
+                padding: 2px 4px !important;
+                margin: 12px 7px 0 0 !important;
+                font-size: 8px;
             }
 
             tbody td img {
-                margin: 30px 0 20px;
+                margin: 24px 0 12px;
+            }
+        }
+
+        @media (min-width: 320px) and (max-width: 425px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            header h4 {
+                font-size: 16px;
+            }
+
+            header button {
+                font-size: 13px !important;
+                padding: 3px 6px !important;
+            }
+
+            thead th {
+                font-size: 8px;
+            }
+
+            tbody td {
+                padding: 8px !important;
+            }
+
+            tbody td p.mt-5, tbody th p.mt-5{
+                font-size: 8px;
+                margin: 12px 0 6px !important;
+            }
+
+            tbody td a.btn {
+                padding: 2px 4px !important;
+                margin: 12px 7px 0 0 !important;
+                font-size: 8px;
+            }
+
+            tbody td img {
+                margin: 12px 0 6px;
+            }
+
+            footer p {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            header h4 {
+                font-size: 12px;
+            }
+
+            header button {
+                font-size: 13px !important;
+                padding: 3px 6px !important;
+            }
+
+            thead th {
+                font-size: 5px;
+            }
+
+            tbody td {
+                padding: 4px !important;
+            }
+
+            tbody td p.mt-5, tbody th p.mt-5{
+                font-size: 5px;
+                margin: 8px 0 4px !important;
+            }
+
+            tbody td a.btn {
+                padding: 2px 4px !important;
+                margin: 12px 7px 0 0 !important;
+                font-size: 8px;
+            }
+
+            tbody td img {
+                margin: 8px 0 4px;
+            }
+
+            footer p {
+                font-size: 15px;
             }
         }
     </style>
