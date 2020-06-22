@@ -97,9 +97,8 @@ endif ?>
                         </div>
                         <div class="modal-body text-center">
                         <?php try { ?>
-                            <?php if (login() > 0):
-                            header("Location: index.php");
-                            exit(0);?>
+                            <?php if (login() > 0): ?>
+                                <script>document.location.href = 'index.php'</script>
                             <?php else: ?>
                             <h5>Gagal melakukan login!</h5>
                             <h5 class="text-danger"><?= mysqli_error($link) ?></h5>

@@ -125,7 +125,7 @@ endif ?>
             }
 
             header h4 {
-                font-size: 16px;
+                font-size: 14px;
             }
 
             header button {
@@ -167,7 +167,7 @@ endif ?>
             }
 
             header h4 {
-                font-size: 12px;
+                font-size: 11px;
             }
 
             header button {
@@ -238,14 +238,14 @@ endif ?>
                 </button>
             </form>
             <section id="table-mahasiswa">
-                <?php $jumlahDataPerHalaman = 5;
+                <?php $jumlahDataPerHalaman = 10;
                 $jumlahSeluruhData = count(select("SELECT * FROM mahasiswa"));
                 $jumlahSeluruhHalaman = ceil($jumlahSeluruhData / $jumlahDataPerHalaman);
                 $halamanAktifSaatIni = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
                 $awalDataTiapHalaman = ($jumlahDataPerHalaman * $halamanAktifSaatIni) - $jumlahDataPerHalaman;
                 $keyword = (isset($_GET['keyword'])) ? $_GET['keyword'] : 1;
                 $students = search($keyword, "$awalDataTiapHalaman, $jumlahDataPerHalaman") ?>
-                <table class="table table-responsive table-striped">
+                <table class="table table-striped">
                     <thead class="thead-dark">
                     <tr>
                         <th scope="col">No</th>
@@ -281,10 +281,10 @@ endif ?>
                         <?php if($i === (int)$halamanAktifSaatIni): ?>
                             <?php if($i === (int)$jumlahSeluruhHalaman): ?>
                                 <li class="page-item active" aria-current="page">
-                    <span class="page-link">
-                        <?= $i ?>
-                    <span class="sr-only">(current)</span>
-                    </span>
+                                    <span class="page-link">
+                                        <?= $i ?>
+                                    <span class="sr-only">(current)</span>
+                                    </span>
                                 </li>
                                 <li class="page-item disabled">
                                     <span class="page-link">Next</span>
@@ -292,10 +292,10 @@ endif ?>
                                 <?php break ?>
                             <?php else: ?>
                                 <li class="page-item active" aria-current="page">
-                            <span class="page-link">
-                                <?= $i ?>
-                            <span class="sr-only">(current)</span>
-                            </span>
+                                    <span class="page-link">
+                                        <?= $i ?>
+                                    <span class="sr-only">(current)</span>
+                                    </span>
                                 </li>
                             <?php endif ?>
                         <?php else: ?>

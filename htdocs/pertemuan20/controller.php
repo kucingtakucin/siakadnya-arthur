@@ -60,7 +60,7 @@ function upload(): string {
         throw new \RuntimeException("Yang kamu masukkan bukan gambar!", 1);
     endif;
     if ($filesize > 1000000):
-        throw new \RuntimeException("Ukuran gambar kamu terlalu besar!", 1);
+        throw new \RuntimeException("Ukuran gambar kamu terlalu besar! Max. 1MB", 1);
     endif;
 
     $newfilename = uniqid($prefixfilename, true) . ".$extensionfile";
@@ -157,12 +157,13 @@ function login(): bool{
     else:
         throw new \RuntimeException("Email kamu belum terdaftar!", 1);
     endif;
+
 }
 
 /**
- * @return bool
+ *
  */
-function session(): bool {
+function session(): void {
     global $link;
     if (isset($_COOKIE['key'], $_COOKIE['value'])):
         $id = base64_decode($_COOKIE['key']);
@@ -173,8 +174,7 @@ function session(): bool {
         if ($username === hash('sha512', $result['username'])):
             $_SESSION['login'] = true;
             $_SESSION['username'] = $result['username'];
-            return true;
+            $_SESSION['role'] = $result['role'];
         endif;
     endif;
-    return false;
 }

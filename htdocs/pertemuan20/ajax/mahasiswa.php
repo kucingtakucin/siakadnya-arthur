@@ -2,7 +2,7 @@
 //sleep(1);
 //usleep(500000);
 require_once '../init.php';
-$jumlahDataPerHalaman = 5;
+$jumlahDataPerHalaman = 10;
 $jumlahSeluruhData = count(select("SELECT * FROM mahasiswa"));
 $jumlahSeluruhHalaman = ceil($jumlahSeluruhData / $jumlahDataPerHalaman);
 $halamanAktifSaatIni = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;

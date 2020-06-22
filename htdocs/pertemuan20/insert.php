@@ -12,19 +12,19 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="nim">NIM</label>
-                        <input type="text" class="form-control" required id="nim" autocomplete="off" name="nim">
+                        <input type="text" class="form-control" maxlength="8" required id="nim" autocomplete="off" name="nim">
                     </div>
                     <div class="form-group">
                         <label for="nama">Nama</label>
-                        <input type="text" class="form-control" required id="nama" autocomplete="off" name="nama">
+                        <input type="text" class="form-control" maxlength="20" required id="nama" autocomplete="off" name="nama">
                     </div>
                     <div class="form-group">
                         <label for="jurusan">Jurusan</label>
-                        <input type="text" class="form-control" required id="jurusan" autocomplete="off" name="jurusan">
+                        <input type="text" class="form-control" maxlength="20" required id="jurusan" autocomplete="off" name="jurusan">
                     </div>
                     <div class="form-group">
                         <label for="angkatan">Angkatan</label>
-                        <input type="text" class="form-control" required id="angkatan" autocomplete="off" name="angkatan">
+                        <input type="number" class="form-control" min="0" max="3000" maxlength="4" required id="angkatan" autocomplete="off" name="angkatan">
                     </div>
                     <div class="custom-file">
                         <label for="foto">Foto</label>
